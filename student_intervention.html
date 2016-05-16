@@ -227,7 +227,7 @@ Students who "will graduate" does not need intervention and who "will not gradua
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c1"># Import libraries</span>
@@ -279,7 +279,7 @@ Students who "will graduate" does not need intervention and who "will not gradua
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c1"># TODO: Calculate number of students</span>
@@ -342,7 +342,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c1"># Extract feature columns</span>
@@ -424,7 +424,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -495,7 +495,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -590,7 +590,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -663,7 +663,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -686,28 +686,14 @@ Testing set has 95 samples.
 <span class="n">X_train_300</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[:</span><span class="mi">300</span><span class="p">]</span>
 <span class="n">y_train_300</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[:</span><span class="mi">300</span><span class="p">]</span>
 
-<span class="c1"># TODO: Execute the &#39;train_predict&#39; function for each classifier and each training set size</span>
-<span class="n">train_predict</span><span class="p">(</span><span class="n">clf_A</span><span class="p">,</span> <span class="n">X_train_100</span><span class="p">,</span> <span class="n">y_train_100</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;-----------------------------------------&#39;</span>
-<span class="n">train_predict</span><span class="p">(</span><span class="n">clf_A</span><span class="p">,</span> <span class="n">X_train_200</span><span class="p">,</span> <span class="n">y_train_200</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;-----------------------------------------&#39;</span>
-<span class="n">train_predict</span><span class="p">(</span><span class="n">clf_A</span><span class="p">,</span> <span class="n">X_train_300</span><span class="p">,</span> <span class="n">y_train_300</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;-----------------------------------------&#39;</span>
-<span class="k">print</span> <span class="s1">&#39;-----------------------------------------&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span><span class="p">]:</span>
+    <span class="n">train_predict</span><span class="p">(</span><span class="n">clf_A</span><span class="p">,</span> <span class="n">X_train</span><span class="p">[:</span><span class="n">i</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[:</span><span class="n">i</span><span class="p">],</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 
-<span class="n">train_predict</span><span class="p">(</span><span class="n">clf_B</span><span class="p">,</span> <span class="n">X_train_100</span><span class="p">,</span> <span class="n">y_train_100</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;-----------------------------------------&#39;</span>
-<span class="n">train_predict</span><span class="p">(</span><span class="n">clf_B</span><span class="p">,</span> <span class="n">X_train_200</span><span class="p">,</span> <span class="n">y_train_200</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;-----------------------------------------&#39;</span>
-<span class="n">train_predict</span><span class="p">(</span><span class="n">clf_B</span><span class="p">,</span> <span class="n">X_train_300</span><span class="p">,</span> <span class="n">y_train_300</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;-----------------------------------------&#39;</span>
-<span class="k">print</span> <span class="s1">&#39;-----------------------------------------&#39;</span>
-
-<span class="n">train_predict</span><span class="p">(</span><span class="n">clf_C</span><span class="p">,</span> <span class="n">X_train_100</span><span class="p">,</span> <span class="n">y_train_100</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;-----------------------------------------&#39;</span>
-<span class="n">train_predict</span><span class="p">(</span><span class="n">clf_C</span><span class="p">,</span> <span class="n">X_train_200</span><span class="p">,</span> <span class="n">y_train_200</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="k">print</span> <span class="s1">&#39;-----------------------------------------&#39;</span>
-<span class="n">train_predict</span><span class="p">(</span><span class="n">clf_C</span><span class="p">,</span> <span class="n">X_train_300</span><span class="p">,</span> <span class="n">y_train_300</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]:</span>
+    <span class="n">train_predict</span><span class="p">(</span><span class="n">clf_B</span><span class="p">,</span> <span class="n">X_train</span><span class="p">[:</span><span class="n">i</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[:</span><span class="n">i</span><span class="p">],</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]:</span>
+    <span class="n">train_predict</span><span class="p">(</span><span class="n">clf_C</span><span class="p">,</span> <span class="n">X_train</span><span class="p">[:</span><span class="n">i</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[:</span><span class="n">i</span><span class="p">],</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -721,66 +707,56 @@ Testing set has 95 samples.
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training a DecisionTreeClassifier using a training set size of 100. . .
-Trained model in 0.0009 seconds
-Made predictions in 0.0002 seconds.
+Trained model in 0.0023 seconds
+Made predictions in 0.0004 seconds.
 F1 score for training set: 1.0000.
-Made predictions in 0.0001 seconds.
-F1 score for test set: 0.6549.
------------------------------------------
+Made predictions in 0.0002 seconds.
+F1 score for test set: 0.6325.
 Training a DecisionTreeClassifier using a training set size of 200. . .
-Trained model in 0.0011 seconds
+Trained model in 0.0013 seconds
 Made predictions in 0.0002 seconds.
 F1 score for training set: 1.0000.
-Made predictions in 0.0001 seconds.
+Made predictions in 0.0002 seconds.
 F1 score for test set: 0.7519.
------------------------------------------
 Training a DecisionTreeClassifier using a training set size of 300. . .
-Trained model in 0.0015 seconds
-Made predictions in 0.0002 seconds.
+Trained model in 0.0017 seconds
+Made predictions in 0.0003 seconds.
 F1 score for training set: 1.0000.
 Made predictions in 0.0001 seconds.
-F1 score for test set: 0.6167.
------------------------------------------
------------------------------------------
+F1 score for test set: 0.6271.
 Training a SVC using a training set size of 100. . .
-Trained model in 0.0010 seconds
+Trained model in 0.0021 seconds
 Made predictions in 0.0007 seconds.
 F1 score for training set: 0.8777.
-Made predictions in 0.0011 seconds.
+Made predictions in 0.0007 seconds.
 F1 score for test set: 0.7746.
------------------------------------------
 Training a SVC using a training set size of 200. . .
-Trained model in 0.0028 seconds
-Made predictions in 0.0019 seconds.
+Trained model in 0.0027 seconds
+Made predictions in 0.0020 seconds.
 F1 score for training set: 0.8679.
 Made predictions in 0.0010 seconds.
 F1 score for test set: 0.7815.
------------------------------------------
 Training a SVC using a training set size of 300. . .
-Trained model in 0.0054 seconds
+Trained model in 0.0058 seconds
 Made predictions in 0.0041 seconds.
 F1 score for training set: 0.8761.
 Made predictions in 0.0014 seconds.
 F1 score for test set: 0.7838.
------------------------------------------
------------------------------------------
 Training a KNeighborsClassifier using a training set size of 100. . .
-Trained model in 0.0005 seconds
-Made predictions in 0.0013 seconds.
+Trained model in 0.0013 seconds
+Made predictions in 0.0014 seconds.
 F1 score for training set: 0.8060.
-Made predictions in 0.0009 seconds.
+Made predictions in 0.0010 seconds.
 F1 score for test set: 0.7246.
------------------------------------------
 Training a KNeighborsClassifier using a training set size of 200. . .
 Trained model in 0.0005 seconds
 Made predictions in 0.0023 seconds.
 F1 score for training set: 0.8800.
 Made predictions in 0.0013 seconds.
 F1 score for test set: 0.7692.
------------------------------------------
 Training a KNeighborsClassifier using a training set size of 300. . .
-Trained model in 0.0008 seconds
-Made predictions in 0.0048 seconds.
+Trained model in 0.0006 seconds
+Made predictions in 0.0046 seconds.
 F1 score for training set: 0.8809.
 Made predictions in 0.0020 seconds.
 F1 score for test set: 0.7801.
@@ -820,24 +796,24 @@ F1 score for test set: 0.7801.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
+<td style="text-align:center">0.0004</td>
 <td style="text-align:center">0.0002</td>
-<td style="text-align:center">0.0001</td>
 <td style="text-align:center">1.0</td>
-<td style="text-align:center">0.6549</td>
+<td style="text-align:center">0.6325</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
 <td style="text-align:center">0.0002</td>
-<td style="text-align:center">0.0001</td>
+<td style="text-align:center">0.0002</td>
 <td style="text-align:center">1.0</td>
 <td style="text-align:center">0.7519</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.0002</td>
+<td style="text-align:center">0.0003</td>
 <td style="text-align:center">0.0001</td>
 <td style="text-align:center">1.0</td>
-<td style="text-align:center">0.6167</td>
+<td style="text-align:center">0.6271</td>
 </tr>
 </tbody>
 </table>
@@ -854,14 +830,14 @@ F1 score for test set: 0.7801.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0010</td>
-<td style="text-align:center">0.0011</td>
+<td style="text-align:center">0.0007</td>
+<td style="text-align:center">0.0007</td>
 <td style="text-align:center">0.8777</td>
 <td style="text-align:center">0.7746</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.0028</td>
+<td style="text-align:center">0.0020</td>
 <td style="text-align:center">0.0010</td>
 <td style="text-align:center">0.8679</td>
 <td style="text-align:center">0.7815</td>
@@ -888,8 +864,8 @@ F1 score for test set: 0.7801.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0013</td>
-<td style="text-align:center">0.0009</td>
+<td style="text-align:center">0.0014</td>
+<td style="text-align:center">0.0010</td>
 <td style="text-align:center">0.8060</td>
 <td style="text-align:center">0.7246</td>
 </tr>
@@ -902,7 +878,7 @@ F1 score for test set: 0.7801.
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.0048</td>
+<td style="text-align:center">0.0046</td>
 <td style="text-align:center">0.0020</td>
 <td style="text-align:center">0.8809</td>
 <td style="text-align:center">0.7801</td>
@@ -1000,7 +976,7 @@ You can get predicted label based on the features new data has.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c1"># TODO: Import &#39;gridSearchCV&#39; and &#39;make_scorer&#39;</span>
@@ -1041,9 +1017,9 @@ You can get predicted label based on the features new data has.</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Made predictions in 0.0028 seconds.
+<pre>Made predictions in 0.0029 seconds.
 Tuned model has a training F1 score of 0.8289.
-Made predictions in 0.0010 seconds.
+Made predictions in 0.0009 seconds.
 Tuned model has a testing F1 score of 0.7945.
 </pre>
 </div>
